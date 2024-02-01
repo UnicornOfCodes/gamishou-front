@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import background from "../assets/image-landing-page.jpeg"
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<section class="h-40 bg-primary">
-
+		<section >
+			<Image src={background} alt="background landing page" class="border-b-4 border-primary" />
 		</section>
 		<section class="text-center py-8">
 			<div class="stats shadow ">
