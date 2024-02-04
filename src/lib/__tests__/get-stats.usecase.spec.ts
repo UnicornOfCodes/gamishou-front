@@ -1,7 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { $stats } from "../store/stats.store";
 import { getStats } from "../usecases/get-stats.usecase";
-import { statsGateway } from "../infra/fake-stats.gateway";
+import { $dependenciesStore } from "../store/dependencies.store";
+
+// TODO set les dépendances typiques aux tests
+const dependencies = $dependenciesStore.get();
+const statsGateway = dependencies.statsGateway;
 
 describe("Feature: retrieving stats", () => {
   it("All users can see stats", async ({ expect }) => {

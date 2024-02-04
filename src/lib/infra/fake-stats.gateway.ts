@@ -10,5 +10,3 @@ export class FakeStatsGateway implements StatsGateway {
     return Promise.resolve(this.returnedStats);
   }
 }
-
-export const statsGateway = new FakeStatsGateway();
