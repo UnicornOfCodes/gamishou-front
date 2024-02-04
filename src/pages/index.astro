@@ -1,6 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import { getImage } from "astro:assets"
+
+import Layout from "../layouts/Layout.astro";
 import backgroundSection from "../assets/image-landing-page.jpeg"
 const optimizedBackgroundImage = await getImage({ src: backgroundSection })
 ---
@@ -8,10 +9,9 @@ const optimizedBackgroundImage = await getImage({ src: backgroundSection })
 <Layout title="Gamishou">
   <main>
     <section  class="landing-background" style={`background-image: url('${optimizedBackgroundImage.src}')`}>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quisquam non nobis ut aspernatur, beatae sed. Tenetur nisi tempore asperiores, repellat, recusandae ex suscipit voluptas et consequatur atque, ducimus architecto.</p>
     </section>
     <section class="text-center py-8">
-      <div class="stats shadow">
+      <div class="stats">
         <div class="stat">
           <div class="stat-figure text-secondary">
             <i class="fa-solid fa-newspaper fa-2xl text-primary"></i>
@@ -20,20 +20,20 @@ const optimizedBackgroundImage = await getImage({ src: backgroundSection })
           <div class="stat-value">31K</div>
         </div>
 
-        <div class="stat">
+        {/* <div class="stat">
           <div class="stat-figure text-secondary">
             <i class="fa-solid fa-comments fa-2xl text-primary"></i>
           </div>
           <div class="stat-title">Commentaires</div>
           <div class="stat-value">4,200</div>
-        </div>
+        </div>*/}
 
         <div class="stat">
           <div class="stat-figure text-secondary">
             <i class="fa-solid fa-gamepad fa-2xl text-primary"></i>
           </div>
           <div class="stat-title">Jeux vidéos</div>
-          <div class="stat-value">1,200</div>
+          <div class="stat-value">1,200K</div>
         </div>
       </div>
     </section>
@@ -48,3 +48,4 @@ const optimizedBackgroundImage = await getImage({ src: backgroundSection })
 		background-size: cover;
 	}
 </style>
+../lib/usecases/get-stats.usecase.ts../lib/infra/stats.gateway.fake.ts
