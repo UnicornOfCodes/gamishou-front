@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getImage } from "astro:assets";
+import backgroundSignIn from "../assets/fond-inscription.jpg";
+const optimizedBackgroundImage = await getImage({ src: backgroundSignIn });
+---
+
+<Layout title="Gamishou">
+  <main
+    style={`background-image: url('${optimizedBackgroundImage.src}')`}
+    class="h-screen bg-center bg-cover flex"
+  >
+    <div class="card w-96 bg-base-100 shadow-xl m-auto">
+      <div class="card-body">
+        <h2 class="card-title m-auto text-base-300">Inscription</h2>
+
+        <input
+          type="text"
+          placeholder="Nom d'utilisateur"
+          id="username"
+          class="input input-bordered w-full max-w-xs"
+        />
+        <input
+          type="text"
+          placeholder="E-mail"
+          id="e-mail"
+          class="input input-bordered w-full max-w-xs"
+        />
+        <input
+          type="text"
+          placeholder="Mot de passe"
+          id="password"
+          class="input input-bordered w-full max-w-xs"
+        />
+        <input
+          type="text"
+          placeholder="Confirmer mot de passe"
+          id="confirm-password"
+          class="input input-bordered w-full max-w-xs"
+        />
+
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary text-base-100 w-full"
+            >S'INSCRIRE</button
+          >
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style></style>
